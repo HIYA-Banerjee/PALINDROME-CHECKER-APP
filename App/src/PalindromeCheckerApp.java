@@ -1,22 +1,32 @@
-// File: UseCase3PalindromeCheckerApp.java
+// File: UseCase5PalindromeCheckerApp.java
 
-public class UseCase3PalindromeCheckerApp {
+import java.util.Stack;
+
+public class giPalindromeCheckerApp {
 
     // Entry point of the application
     public static void main(String[] args) {
         // Hardcoded string to check
-        String word = "racecar";
+        String word = "radar";
 
         // Display the word being checked
         System.out.println("Checking if \"" + word + "\" is a palindrome...");
 
-        // Reverse the string manually using a loop
-        String reversed = "";
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed = reversed + word.charAt(i); // string concatenation
+        // Create a stack of characters
+        Stack<Character> stack = new Stack<>();
+
+        // Push each character into the stack
+        for (int i = 0; i < word.length(); i++) {
+            stack.push(word.charAt(i));
         }
 
-        // Compare original and reversed using equals()
+        // Pop characters to build the reversed string
+        String reversed = "";
+        while (!stack.isEmpty()) {
+            reversed = reversed + stack.pop();
+        }
+
+        // Compare original and reversed
         if (word.equals(reversed)) {
             System.out.println("Result: \"" + word + "\" IS a palindrome.");
         } else {
@@ -27,7 +37,6 @@ public class UseCase3PalindromeCheckerApp {
         System.out.println("Program finished.");
     }
 }
-
 
 
 
