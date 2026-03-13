@@ -2,7 +2,7 @@
 
 import java.util.Stack;
 
-public class giPalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     // Entry point of the application
     public static void main(String[] args) {
